@@ -1,0 +1,28 @@
+name: Build BestSpeedometer
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Android NDK
+        uses: nttld/setup-ndk@v1
+        with:
+          ndk-version: r26b
+
+      - name: Build
+        run: ndk-build
+
+      - name: Upload APK library
+        uses: actions/upload-artifact@v4
+        with:
+          name: BestSpeedometer
+          path: libs/
