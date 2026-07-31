@@ -19,7 +19,7 @@ jobs:
           ndk-version: r26b
 
       - name: Build
-        run: ndk-build
+        run: ndk-build NDK_PROJECT_PATH=. APP_BUILD_SCRIPT=Android.mk NDK_APPLICATION_MK=Application.mk
 
       - name: Upload APK library
         uses: actions/upload-artifact@v4
