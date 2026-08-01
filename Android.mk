@@ -4,7 +4,11 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE := BestSpeedometer
 LOCAL_CPP_EXTENSION := .cpp
-LOCAL_SRC_FILES := main.cpp mod/logger.cpp mod/config.cpp
+
+LOCAL_SRC_FILES := \
+    main.cpp \
+    include/mod/logger.cpp \
+    include/mod/config.cpp
 
 LOCAL_CFLAGS += -O2 -std=c++17 -DNDEBUG
 LOCAL_C_INCLUDES += ./include
